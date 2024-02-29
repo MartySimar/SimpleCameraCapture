@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-@MainActor
+
 final class CameraViewModel: NSObject, ObservableObject{
     
     @Published var cameraPermission: CameraPermission = .idle
@@ -35,21 +35,29 @@ final class CameraViewModel: NSObject, ObservableObject{
         Task{
             switch AVCaptureDevice.authorizationStatus(for: .video) {
             case .authorized:
-                cameraPermission = .approved
-                setupCamera()
+                await MainActor.run{
+                    cameraPermission = .approved
+                }
+                await setupCamera()
             case.notDetermined:
                 // requesting camera access
                 if await AVCaptureDevice.requestAccess(for: .video) {
                     //Access granted
-                    cameraPermission = .approved
-                    setupCamera()
+                    await MainActor.run{
+                        cameraPermission = .approved
+                    }
+                    await setupCamera()
                 }else{
                     //access denied
-                    cameraPermission = .denied
+                    await MainActor.run{
+                        cameraPermission = .denied
+                    }
                     presentError("Please provide access to camera for capture")
                 }
             case .denied, .restricted:
-                cameraPermission = .denied
+                await MainActor.run{
+                    cameraPermission = .denied
+                }
                 presentError("Please provide access to camera for capture")
             default: break
             }
@@ -57,7 +65,7 @@ final class CameraViewModel: NSObject, ObservableObject{
     }
     
     //Setting up camera
-    func setupCamera(){
+    func setupCamera() async{
         do{
             self.session.beginConfiguration()
             guard let backCamera = AVCaptureDevice.default(for: .video) else {
