@@ -34,13 +34,21 @@ struct CameraView: View {
                     //Buttons
                     HStack{
                         if case .notStarted = vm.photoCaptureState {
+                            Button("Close") {
+                                dismiss()
+                            }
+                            Spacer()
+                            Spacer()
                             Button(action: {
                                 vm.takePhoto()
-                            }, label: {
+                            }) {
                                 Image(systemName: "camera.circle.fill")
                                     .resizable()
                                     .frame(width: 70, height: 70)
-                            })
+                            }
+                            Spacer()
+                            Spacer()
+                            Spacer()
                         }else{
                             Button("Retake") {
                                 vm.retakePhoto()
@@ -55,7 +63,7 @@ struct CameraView: View {
                         }
                     }.padding()
                         .padding(.bottom, 30)
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity, alignment: .center)
                         .background {
                             Rectangle()
                                 .foregroundStyle(.ultraThinMaterial)
@@ -66,17 +74,7 @@ struct CameraView: View {
             }
         }
         .ignoresSafeArea()
-        .safeAreaInset(edge: .top, content: {
-            HStack{
-                Spacer()
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    Image(systemName: "xmark")
-                })
-                .padding()
-            }
-        })
+        
         .alert(vm.errorMessage, isPresented: $vm.showError) {
             //Showing settings button, if permission is denied
             if vm.cameraPermission == .denied{
