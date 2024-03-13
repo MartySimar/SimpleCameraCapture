@@ -8,5 +8,5 @@
 import Foundation
 
 enum PhotoCaptureState: Equatable {
-    case notStarted, processing, finished(Data?)
+    case notStarted, processing, finished
 }

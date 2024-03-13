@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    //Usually this variables will be in ViewModel, but for test project is fine ;)
+    // Usually this variables will be in ViewModel, but for test project is fine ;)
     @State private var showCameraSheet = false
     @State private var image: UIImage?
-    
+
     var body: some View {
-        VStack{
-            if let safeImage = image{
+        VStack {
+            if let safeImage = image {
                 Image(uiImage: safeImage)
                     .resizable()
                     .scaledToFit()

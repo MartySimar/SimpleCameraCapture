@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-extension UIDeviceOrientation{
-    var videoRotationAngle: CGFloat{
+extension UIDeviceOrientation {
+    var videoRotationAngle: CGFloat {
         switch self {
         case .portrait:
             90
@@ -23,7 +23,7 @@ extension UIDeviceOrientation{
             90
         }
     }
-    
+
     var uiImageOrientation: UIImage.Orientation {
         switch self {
         case .landscapeLeft:

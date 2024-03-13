@@ -14,6 +14,9 @@
 		D713EED32B8DDEF1006CF7B8 /* CameraViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713EED22B8DDEF1006CF7B8 /* CameraViewRepresentable.swift */; };
 		D713EED52B8DE101006CF7B8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713EED42B8DE101006CF7B8 /* CameraView.swift */; };
 		D713EED82B8DE4AD006CF7B8 /* CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713EED72B8DE4AD006CF7B8 /* CameraPermission.swift */; };
+		D75368192BA180170020A95B /* AVCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75368182BA180170020A95B /* AVCaptureManager.swift */; };
+		D753681B2BA188CC0020A95B /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753681A2BA188CC0020A95B /* CustomError.swift */; };
+		D753681D2BA1AC700020A95B /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753681C2BA1AC700020A95B /* Camera.swift */; };
 		D7A7F4932B8F1D10009BDF1B /* UIDeviceOrientation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7F4922B8F1D10009BDF1B /* UIDeviceOrientation+.swift */; };
 		D7A7F4952B8F2F26009BDF1B /* PhotoCaptureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7F4942B8F2F26009BDF1B /* PhotoCaptureState.swift */; };
 		D7A7F4992B8F36D0009BDF1B /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7F4982B8F36D0009BDF1B /* CameraViewModel.swift */; };
@@ -28,6 +31,9 @@
 		D713EED22B8DDEF1006CF7B8 /* CameraViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewRepresentable.swift; sourceTree = "<group>"; };
 		D713EED42B8DE101006CF7B8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D713EED72B8DE4AD006CF7B8 /* CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermission.swift; sourceTree = "<group>"; };
+		D75368182BA180170020A95B /* AVCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureManager.swift; sourceTree = "<group>"; };
+		D753681A2BA188CC0020A95B /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		D753681C2BA1AC700020A95B /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		D7A7F4922B8F1D10009BDF1B /* UIDeviceOrientation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDeviceOrientation+.swift"; sourceTree = "<group>"; };
 		D7A7F4942B8F2F26009BDF1B /* PhotoCaptureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureState.swift; sourceTree = "<group>"; };
 		D7A7F4982B8F36D0009BDF1B /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -51,6 +57,7 @@
 				D7BC0BB02B8F43B3007B90D3 /* Readme.md */,
 				D713EEC32B8DDE84006CF7B8 /* SimpleCameraCapture */,
 				D713EEC22B8DDE84006CF7B8 /* Products */,
+				D71F80112BA0A2DE005916FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,10 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				D713EEC42B8DDE84006CF7B8 /* SimpleCameraCaptureApp.swift */,
-				D713EED22B8DDEF1006CF7B8 /* CameraViewRepresentable.swift */,
 				D7A7F4972B8F36AF009BDF1B /* View Models */,
 				D7A7F4962B8F369C009BDF1B /* Views */,
 				D713EED62B8DE495006CF7B8 /* Model */,
+				D75368172BA17FEC0020A95B /* Managers */,
 				D7A7F4912B8F1CE8009BDF1B /* Extensions */,
 				D713EEC82B8DDE86006CF7B8 /* Assets.xcassets */,
 				D713EECA2B8DDE86006CF7B8 /* Preview Content */,
@@ -90,8 +97,33 @@
 			children = (
 				D713EED72B8DE4AD006CF7B8 /* CameraPermission.swift */,
 				D7A7F4942B8F2F26009BDF1B /* PhotoCaptureState.swift */,
+				D753681A2BA188CC0020A95B /* CustomError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D71F80112BA0A2DE005916FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D75368172BA17FEC0020A95B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D75368182BA180170020A95B /* AVCaptureManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D753681E2BA1AC9F0020A95B /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				D713EED22B8DDEF1006CF7B8 /* CameraViewRepresentable.swift */,
+				D753681C2BA1AC700020A95B /* Camera.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		D7A7F4912B8F1CE8009BDF1B /* Extensions */ = {
@@ -107,6 +139,7 @@
 			children = (
 				D713EED42B8DE101006CF7B8 /* CameraView.swift */,
 				D713EEC62B8DDE84006CF7B8 /* ContentView.swift */,
+				D753681E2BA1AC9F0020A95B /* SubViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +160,7 @@
 			buildConfigurationList = D713EECF2B8DDE86006CF7B8 /* Build configuration list for PBXNativeTarget "SimpleCameraCapture" */;
 			buildPhases = (
 				D713EEBD2B8DDE84006CF7B8 /* Sources */,
+				D75368162BA0E0E20020A95B /* SwiftLint */,
 				D713EEBE2B8DDE84006CF7B8 /* Frameworks */,
 				D713EEBF2B8DDE84006CF7B8 /* Resources */,
 			);
@@ -135,6 +169,8 @@
 			dependencies = (
 			);
 			name = SimpleCameraCapture;
+			packageProductDependencies = (
+			);
 			productName = SimpleCameraCapture;
 			productReference = D713EEC12B8DDE84006CF7B8 /* SimpleCameraCapture.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +199,8 @@
 				Base,
 			);
 			mainGroup = D713EEB82B8DDE84006CF7B8;
+			packageReferences = (
+			);
 			productRefGroup = D713EEC22B8DDE84006CF7B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -184,19 +222,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D75368162BA0E0E20020A95B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D713EEBD2B8DDE84006CF7B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D753681D2BA1AC700020A95B /* Camera.swift in Sources */,
 				D713EED32B8DDEF1006CF7B8 /* CameraViewRepresentable.swift in Sources */,
 				D713EEC72B8DDE84006CF7B8 /* ContentView.swift in Sources */,
 				D7A7F4932B8F1D10009BDF1B /* UIDeviceOrientation+.swift in Sources */,
 				D713EED82B8DE4AD006CF7B8 /* CameraPermission.swift in Sources */,
 				D7A7F4952B8F2F26009BDF1B /* PhotoCaptureState.swift in Sources */,
+				D753681B2BA188CC0020A95B /* CustomError.swift in Sources */,
 				D7A7F4992B8F36D0009BDF1B /* CameraViewModel.swift in Sources */,
 				D713EEC52B8DDE84006CF7B8 /* SimpleCameraCaptureApp.swift in Sources */,
 				D713EED52B8DE101006CF7B8 /* CameraView.swift in Sources */,
+				D75368192BA180170020A95B /* AVCaptureManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -312,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -332,6 +395,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleCameraCapture/Preview Content\"";
 				DEVELOPMENT_TEAM = S6M35AAZJ6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access for camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -339,6 +403,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,6 +427,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleCameraCapture/Preview Content\"";
 				DEVELOPMENT_TEAM = S6M35AAZJ6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access for camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -369,6 +435,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

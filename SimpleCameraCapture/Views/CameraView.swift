@@ -8,79 +8,26 @@
 import SwiftUI
 
 struct CameraView: View {
-    @StateObject var vm = CameraViewModel()
+    @StateObject var viewModel = CameraViewModel()
     @Environment(\.openURL) var openURL
     @Environment(\.dismiss) var dismiss
-    
+
     @Binding var image: UIImage?
-    
+
     var body: some View {
-        GeometryReader{geo in
-            ZStack{
-                Group{
-                    if vm.photoData == nil{
-                        CameraViewRepresentable(frame: geo.frame(in: .global), cameraVM: vm)
-                    }else{
-                        if let photo = vm.showingPhoto{
-                            Image(uiImage: photo)
-                                .resizable()
-                                .scaledToFit()
-                        }
-                    }
-                }.frame(width: geo.size.width, height: geo.size.height)
-                    
-                VStack{
-                    Spacer()
-                    //Buttons
-                    HStack{
-                        if case .notStarted = vm.photoCaptureState {
-                            Button("Close") {
-                                dismiss()
-                            }
-                            Spacer()
-                            Spacer()
-                            Button(action: {
-                                vm.takePhoto()
-                            }) {
-                                Image(systemName: "camera.circle.fill")
-                                    .resizable()
-                                    .frame(width: 70, height: 70)
-                            }
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                        }else{
-                            Button("Retake") {
-                                vm.retakePhoto()
-                            }
-                            Spacer()
-                            Button("Save") {
-                                if let data = vm.photoData{
-                                    image = UIImage(data: data)
-                                    dismiss()
-                                }
-                            }
-                        }
-                    }.padding()
-                        .padding(.bottom, 30)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .background {
-                            Rectangle()
-                                .foregroundStyle(.ultraThinMaterial)
-                        }
-                        .ignoresSafeArea()
-                }
-                
+        GeometryReader { geo in
+            ZStack {
+                Camera(geo: geo, viewModel: viewModel)
+                buttonPanel
             }
         }
         .ignoresSafeArea()
-        
-        .alert(vm.errorMessage, isPresented: $vm.showError) {
-            //Showing settings button, if permission is denied
-            if vm.cameraPermission == .denied{
+        .alert(isPresented: $viewModel.showError, error: viewModel.errorMessage) {
+            // Showing settings button, if permission is denied
+            if viewModel.cameraPermission == .denied {
                 Button("Settings") {
                     let settingsString = UIApplication.openSettingsURLString
-                    if let settingsURL = URL(string: settingsString){
+                    if let settingsURL = URL(string: settingsString) {
                         // open apps settings
                         openURL(settingsURL)
                     }
@@ -88,8 +35,54 @@ struct CameraView: View {
             }
             Button("cancel", role: .cancel) { dismiss() }
         }
-        .onAppear(perform: vm.checkCameraPermision)
-        .onDisappear(perform: vm.stopSession)
+        .onAppear(perform: viewModel.startCameraSession)
+    }
+}
+
+extension CameraView {
+    private var buttonPanel: some View {
+        VStack {
+            Spacer()
+            // Buttons
+            HStack {
+                if case .notStarted = viewModel.photoCaptureState {
+                    ZStack {
+                        HStack {
+                            Button("Close") {
+                                viewModel.endSession()
+                                dismiss()
+                            }
+                            Spacer()
+                        }
+                        Button {
+                            viewModel.takePhoto()
+                        } label: {
+                            Image(systemName: "camera.circle.fill")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                        }
+                    }
+                } else {
+                    Button("Retake") {
+                        viewModel.retakePhoto()
+                    }
+                    Spacer()
+                    Button("Save") {
+                        if let data = viewModel.recievedPhotoData {
+                            image = UIImage(data: data)
+                            dismiss()
+                        }
+                    }
+                }
+            }.padding()
+                .padding(.bottom, 30)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background {
+                    Rectangle()
+                        .foregroundStyle(.ultraThinMaterial)
+                }
+                .ignoresSafeArea()
+        }
     }
 }
 
