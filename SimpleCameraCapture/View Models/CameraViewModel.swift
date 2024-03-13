@@ -40,6 +40,7 @@ final class CameraViewModel: ObservableObject {
         showingPhoto = nil
         cameraPermission = .idle
         photoCaptureState = .notStarted
+        AVCaptureManager.shared.stopSession()
     }
 
     func takePhoto() {
