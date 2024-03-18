@@ -17,6 +17,9 @@
 		D75368192BA180170020A95B /* AVCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75368182BA180170020A95B /* AVCaptureManager.swift */; };
 		D753681B2BA188CC0020A95B /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753681A2BA188CC0020A95B /* CustomError.swift */; };
 		D753681D2BA1AC700020A95B /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753681C2BA1AC700020A95B /* Camera.swift */; };
+		D77778792BA860E10004FBEF /* showcase_video.gif in Resources */ = {isa = PBXBuildFile; fileRef = D77778762BA860E10004FBEF /* showcase_video.gif */; };
+		D777787A2BA860E10004FBEF /* IMG_5781.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D77778772BA860E10004FBEF /* IMG_5781.PNG */; };
+		D777787B2BA860E10004FBEF /* IMG_5782.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D77778782BA860E10004FBEF /* IMG_5782.PNG */; };
 		D7A7F4932B8F1D10009BDF1B /* UIDeviceOrientation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7F4922B8F1D10009BDF1B /* UIDeviceOrientation+.swift */; };
 		D7A7F4952B8F2F26009BDF1B /* PhotoCaptureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7F4942B8F2F26009BDF1B /* PhotoCaptureState.swift */; };
 		D7A7F4992B8F36D0009BDF1B /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7F4982B8F36D0009BDF1B /* CameraViewModel.swift */; };
@@ -34,6 +37,9 @@
 		D75368182BA180170020A95B /* AVCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureManager.swift; sourceTree = "<group>"; };
 		D753681A2BA188CC0020A95B /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		D753681C2BA1AC700020A95B /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		D77778762BA860E10004FBEF /* showcase_video.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = showcase_video.gif; sourceTree = "<group>"; };
+		D77778772BA860E10004FBEF /* IMG_5781.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5781.PNG; sourceTree = "<group>"; };
+		D77778782BA860E10004FBEF /* IMG_5782.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5782.PNG; sourceTree = "<group>"; };
 		D7A7F4922B8F1D10009BDF1B /* UIDeviceOrientation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDeviceOrientation+.swift"; sourceTree = "<group>"; };
 		D7A7F4942B8F2F26009BDF1B /* PhotoCaptureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureState.swift; sourceTree = "<group>"; };
 		D7A7F4982B8F36D0009BDF1B /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				D7BC0BB02B8F43B3007B90D3 /* Readme.md */,
+				D77778752BA860D60004FBEF /* resources */,
 				D713EEC32B8DDE84006CF7B8 /* SimpleCameraCapture */,
 				D713EEC22B8DDE84006CF7B8 /* Products */,
 				D71F80112BA0A2DE005916FB /* Frameworks */,
@@ -124,6 +131,16 @@
 				D753681C2BA1AC700020A95B /* Camera.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		D77778752BA860D60004FBEF /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				D77778772BA860E10004FBEF /* IMG_5781.PNG */,
+				D77778782BA860E10004FBEF /* IMG_5782.PNG */,
+				D77778762BA860E10004FBEF /* showcase_video.gif */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 		D7A7F4912B8F1CE8009BDF1B /* Extensions */ = {
@@ -215,6 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D777787A2BA860E10004FBEF /* IMG_5781.PNG in Resources */,
+				D77778792BA860E10004FBEF /* showcase_video.gif in Resources */,
+				D777787B2BA860E10004FBEF /* IMG_5782.PNG in Resources */,
 				D713EECC2B8DDE86006CF7B8 /* Preview Assets.xcassets in Resources */,
 				D713EEC92B8DDE86006CF7B8 /* Assets.xcassets in Resources */,
 			);
