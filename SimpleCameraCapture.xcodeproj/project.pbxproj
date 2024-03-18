@@ -38,7 +38,7 @@
 		D753681A2BA188CC0020A95B /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		D753681C2BA1AC700020A95B /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		D77778762BA860E10004FBEF /* showcase_video.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = showcase_video.gif; sourceTree = "<group>"; };
-		D77778772BA860E10004FBEF /* IMG_5781.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5781.PNG; sourceTree = "<group>"; };
+		D77778772BA860E10004FBEF /* IMG_5781.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_5781.PNG; path = resources/IMG_5781.PNG; sourceTree = SOURCE_ROOT; };
 		D77778782BA860E10004FBEF /* IMG_5782.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5782.PNG; sourceTree = "<group>"; };
 		D7A7F4922B8F1D10009BDF1B /* UIDeviceOrientation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDeviceOrientation+.swift"; sourceTree = "<group>"; };
 		D7A7F4942B8F2F26009BDF1B /* PhotoCaptureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureState.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				D7BC0BB02B8F43B3007B90D3 /* Readme.md */,
-				D77778752BA860D60004FBEF /* resources */,
+				D777787F2BA861B30004FBEF /* resources */,
 				D713EEC32B8DDE84006CF7B8 /* SimpleCameraCapture */,
 				D713EEC22B8DDE84006CF7B8 /* Products */,
 				D71F80112BA0A2DE005916FB /* Frameworks */,
@@ -133,14 +133,14 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
-		D77778752BA860D60004FBEF /* resources */ = {
+		D777787F2BA861B30004FBEF /* resources */ = {
 			isa = PBXGroup;
 			children = (
 				D77778772BA860E10004FBEF /* IMG_5781.PNG */,
 				D77778782BA860E10004FBEF /* IMG_5782.PNG */,
 				D77778762BA860E10004FBEF /* showcase_video.gif */,
 			);
-			name = resources;
+			path = resources;
 			sourceTree = "<group>";
 		};
 		D7A7F4912B8F1CE8009BDF1B /* Extensions */ = {
